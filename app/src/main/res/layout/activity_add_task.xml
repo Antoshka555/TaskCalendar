@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/addTitleEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_title"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/addDescriptionEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/hint_description"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        app:layout_constraintTop_toBottomOf="@id/addTitleEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/addDateEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/hint_date"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@id/addDescriptionEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/addTimeEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/hint_time"
+        android:importantForAutofill="no"
+        android:inputType="time"
+        app:layout_constraintTop_toBottomOf="@id/addDateEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/addSaveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/save_task"
+        app:layout_constraintTop_toBottomOf="@id/addTimeEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

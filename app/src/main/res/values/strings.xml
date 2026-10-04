@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Календарь задач</string>
+    <string name="screen_title">Мои задачи</string>
+    <string name="add_task_title">Добавить задачу</string>
+    <string name="add_task_hint">Здесь позже появится форма добавления задачи</string>
+    <string name="task_detail_title">Детали задачи</string>
+    <string name="task_detail_id_label">ID задачи:</string>
+    <string name="task_detail_date_label">Дата:</string>
+    <string name="task_detail_desc_label">Описание:</string>
+    <string name="task_detail_status_label">Статус:</string>
+    <string name="fab_add_task">Добавить задачу</string>
+    <string name="task_done">Выполнено</string>
+    <string name="task_not_done">Не выполнено</string>
+    <string name="back">Назад</string>
+
+    <string name="task_1_title">Купить продукты</string>
+    <string name="task_1_desc">Молоко, хлеб, яйца</string>
+    <string name="task_2_title">Сделать зарядку</string>
+    <string name="task_2_desc">30 минут утром</string>
+    <string name="task_3_title">Прочитать главу</string>
+    <string name="task_3_desc">Учебник по Kotlin, глава 4</string>
+    <string name="task_4_title">Позвонить маме</string>
+    <string name="task_4_desc">Вечером после работы</string>
+    <string name="task_5_title">Записаться к врачу</string>
+    <string name="task_5_desc">Терапевт, до пятницы</string>
+
+    <string name="hint_title">Название</string>
+    <string name="hint_description">Описание</string>
+    <string name="hint_date">Дата (ГГГГ-ММ-ДД)</string>
+    <string name="hint_time">Время (ЧЧ:ММ)</string>
+    <string name="save_task">Сохранить</string>
+    <string name="error_empty_title">Введите название задачи</string>
+    <string name="toggle_done">Изменить статус</string>
+    <string name="delete_task">Удалить</string>
+</resources>
