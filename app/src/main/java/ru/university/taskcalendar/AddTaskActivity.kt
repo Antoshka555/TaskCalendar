@@ -1,18 +1,14 @@
 package ru.university.taskcalendar
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class AddTaskActivity : AppCompatActivity() {
 
-    private val tag = "AddTaskActivity"
+    private val viewModel: TaskViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +19,11 @@ class AddTaskActivity : AppCompatActivity() {
         val descEdit = findViewById<EditText>(R.id.addDescriptionEdit)
         val dateEdit = findViewById<EditText>(R.id.addDateEdit)
         val timeEdit = findViewById<EditText>(R.id.addTimeEdit)
+
+
+        viewModel.taskSaved.observe(this) { saved ->
+            if (saved == true) finish()
+        }
 
         findViewById<Button>(R.id.addSaveButton).setOnClickListener {
             val title = titleEdit.text.toString().trim()
@@ -38,15 +39,7 @@ class AddTaskActivity : AppCompatActivity() {
                 time = timeEdit.text.toString().trim().ifEmpty { "09:00" }
             )
 
-            lifecycleScope.launch {
-                withContext(Dispatchers.IO) {
-                    val newId = AppDatabase.getInstance(this@AddTaskActivity)
-                        .taskDao()
-                        .insert(task)
-                    Log.d(tag, "Задача вставлена с id=$newId")
-                }
-                finish()
-            }
+            viewModel.addTask(task)
         }
     }
 
