@@ -32,5 +32,4 @@
     <string name="error_empty_title">Введите название задачи</string>
     <string name="toggle_done">Изменить статус</string>
     <string name="delete_task">Удалить</string>
-    <string name="task_not_found">Задача не найдена</string>
 </resources>

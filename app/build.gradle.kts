@@ -36,6 +36,8 @@ android {
     }
 }
 
+// Согласовываем target Kotlin с Java: и Java, и Kotlin компилируются под 17.
+// Без этого Kotlin берёт версию JVM Groovy-демона (24) и ругается на несоответствие.
 kotlin {
     compilerOptions {
         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
@@ -49,14 +51,9 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.2.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 
-    // --- MVVM: ViewModel / LiveData / корутины ---
-    implementation("androidx.activity:activity-ktx:1.9.3")            // by viewModels()
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7") // viewModelScope
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")  // LiveData + asLiveData()
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
-    // --- Room ---
     val roomVersion = "2.7.2"
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
